@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iever.dao.EveryDaySpecialMapper" >
+  <resultMap id="BaseResultMap" type="com.iever.model.EveryDaySpecial" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="special_title" property="specialTitle" jdbcType="VARCHAR" />
+    <result column="product_title" property="productTitle" jdbcType="VARCHAR" />
+    <result column="special_img_url" property="specialImgUrl" jdbcType="VARCHAR" />
+    <result column="article_ids" property="articleIds" jdbcType="VARCHAR" />
+    <result column="item_top_cate_id" property="itemTopCateId" jdbcType="INTEGER" />
+    <result column="question_id" property="questionId" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="special_time" property="specialTime" jdbcType="DATE" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, special_title, product_title, special_img_url, article_ids, item_top_cate_id, 
+    question_id, status, special_time, create_time, update_time
+  </sql>
+  <select id="selectByParam" resultMap="BaseResultMap" parameterType="com.iever.model.EveryDaySpecial" >
+    select
+    <include refid="Base_Column_List" />
+    from every_day_special
+    <where >
+      <if test="specialTitle != null" >
+        AND special_title = #{specialTitle,jdbcType=VARCHAR}
+      </if>
+      <if test="productTitle != null" >
+        AND product_title = #{productTitle,jdbcType=VARCHAR}
+      </if>
+      <if test="specialImgUrl != null" >
+        AND special_img_url = #{specialImgUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="articleIds != null" >
+        AND article_ids = #{articleIds,jdbcType=VARCHAR}
+      </if>
+      <if test="itemTopCateId != null" >
+        AND item_top_cate_id = #{itemTopCateId,jdbcType=INTEGER}
+      </if>
+      <if test="questionId != null" >
+        AND question_id = #{questionId,jdbcType=INTEGER}
+      </if>
+      <if test="status != null" >
+        AND status = #{status,jdbcType=INTEGER}
+      </if>
+      <if test="specialTime != null" >
+        AND special_time = #{specialTime,jdbcType=DATE}
+      </if>
+      <if test="createTime != null" >
+        AND create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null" >
+        AND update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from every_day_special
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from every_day_special
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.iever.model.EveryDaySpecial" >
+    insert into every_day_special
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="specialTitle != null" >
+        special_title,
+      </if>
+      <if test="productTitle != null" >
+        product_title,
+      </if>
+      <if test="specialImgUrl != null" >
+        special_img_url,
+      </if>
+      <if test="articleIds != null" >
+        article_ids,
+      </if>
+      <if test="itemTopCateId != null" >
+        item_top_cate_id,
+      </if>
+      <if test="questionId != null" >
+        question_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="specialTime != null" >
+        special_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="specialTitle != null" >
+        #{specialTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="productTitle != null" >
+        #{productTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="specialImgUrl != null" >
+        #{specialImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="articleIds != null" >
+        #{articleIds,jdbcType=VARCHAR},
+      </if>
+      <if test="itemTopCateId != null" >
+        #{itemTopCateId,jdbcType=INTEGER},
+      </if>
+      <if test="questionId != null" >
+        #{questionId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="specialTime != null" >
+        #{specialTime,jdbcType=DATE},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateById" parameterType="com.iever.model.EveryDaySpecial" >
+    update every_day_special
+    <set >
+      <if test="specialTitle != null" >
+        special_title = #{specialTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="productTitle != null" >
+        product_title = #{productTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="specialImgUrl != null" >
+        special_img_url = #{specialImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="articleIds != null" >
+        article_ids = #{articleIds,jdbcType=VARCHAR},
+      </if>
+      <if test="itemTopCateId != null" >
+        item_top_cate_id = #{itemTopCateId,jdbcType=INTEGER},
+      </if>
+      <if test="questionId != null" >
+        question_id = #{questionId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="specialTime != null" >
+        special_time = #{specialTime,jdbcType=DATE},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration   
+      PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"   
+      "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry location="mysql-connector-java-5.1.19.jar" />
+
+	<context id="MySqlTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!--true关闭注释 -->
+			<property name="suppressAllComments" value="false" />
+			<property name="suppressDate" value="true"/>
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/iever?generateSimpleParameterMetadata=true" userId="root" password="122111">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- generate Model -->
+		<!--<javaModelGenerator targetPackage="com.menue.sh.box.model" targetProject="D:\workspace\box-parent\p2papk-persist\src\main\java"> -->
+		<javaModelGenerator targetPackage="com.iever.model" targetProject="E:/cx_document/mybatisGen/src">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+
+
+		<!-- generate xml -->
+		<sqlMapGenerator targetPackage="com.iever.dao" targetProject="E:/cx_document/mybatisGen/src">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- generate Mapper -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.iever.dao" targetProject="E:/cx_document/mybatisGen/src">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<table schema="" tableName="every_day_special" domainObjectName="EveryDaySpecial"></table>
+<!-- 		<table schema="" tableName="search_hot" domainObjectName="SearchHot"></table> -->
+<!-- 		<table schema="" tableName="log_req_detail" domainObjectName="LogReqDetail"></table> -->
+<!-- 		<table schema="" tableName="user_feature" domainObjectName="UserFeature"></table> -->
+<!-- 		<table schema="" tableName="every_day_special" domainObjectName="EveryDaySpecial"></table> -->
+<!-- 		<table schema="" tableName="expert_apply" domainObjectName="ExpertApply"></table> -->
+<!-- 		<table schema="" tableName="question_invite" domainObjectName="QuestionInvite"></table> -->
+<!-- 		<table schema="" tableName="question_praise" domainObjectName="QuestionPraise"></table> -->
+<!-- 		<table schema="" tableName="expert_answer_comment" domainObjectName="ExpertAnswerComment"></table> -->
+<!-- 		<table schema="" tableName="question_category" domainObjectName="QuestionCategory"></table> -->
+<!-- 		<table schema="" tableName="item_try_comment" domainObjectName="ItemTryComment"></table> -->
+<!-- 		<table schema="" tableName="sms_log" domainObjectName="SmsLog"></table> -->
+<!-- 		<table schema="" tableName="tags" domainObjectName="Tags"></table> -->
+<!-- 		<table schema="" tableName="tags_relate" domainObjectName="TagsRelate"></table> -->
+<!-- 		<table schema="" tableName="push_token" domainObjectName="PushToken"></table> -->
+<!-- 		<table schema="" tableName="push_msg" domainObjectName="PushMsg"></table> -->
+<!-- 		<table schema="" tableName="expert_article_comment" domainObjectName="ExpertArticleComment"></table> -->
+<!-- 		<table schema="" tableName="expert_article_cover" domainObjectName="ExpertArticleCover"></table> -->
+<!-- 		<table schema="" tableName="expert_article_pic" domainObjectName="ExpertArticlePic"></table> -->
+<!-- 		<table schema="" tableName="expert_question" domainObjectName="ExpertQuestion"></table> -->
+<!-- 		<table schema="" tableName="expert_question_pic" domainObjectName="ExpertQuestionPic"></table> -->
+<!-- 		<table schema="" tableName="expert_category" domainObjectName="ExpertCategory"></table> -->
+<!-- 		<table schema="" tableName="user" domainObjectName="User"></table> -->
+<!-- 		<table schema="" tableName="item_top_category" domainObjectName="ItemTopCategory"></table> -->
+<!-- 		<table schema="" tableName="item_top" domainObjectName="ItemTop"></table> -->
+<!-- 		<table schema="" tableName="item_try" domainObjectName="ItemTry"></table> -->
+<!-- 		<table schema="" tableName="item_try_apply" domainObjectName="ItemTryApply"></table> -->
+<!-- 		<table schema="" tableName="like_detail" domainObjectName="likeDetail"></table> -->
+<!-- 		<table schema="" tableName="item_comment" domainObjectName="ItemComment"></table> -->
+<!-- 		<table schema="" tableName="article_custom" domainObjectName="ArticleCustom"></table> -->
+<!-- 		<table schema="" tableName="home_conf" domainObjectName="HomeConf"></table> -->
+<!-- 		<table schema="" tableName="cover_category" domainObjectName="CoverCategory"></table> -->
+<!-- 		<table schema="" tableName="article_item" domainObjectName="ArticleItem"></table> -->
+<!-- 		<table schema="" tableName="item_category" domainObjectName="ItemCategory"></table> -->
+<!-- 		<table schema="" tableName="item" domainObjectName="Item"></table> -->
+<!-- 		<table schema="" tableName="item_image" domainObjectName="ItemImage"></table> -->
+<!-- 		<table schema="" tableName="article_cover" domainObjectName="ArticleCover"></table> -->
+<!-- 		<table schema="" tableName="article_video" domainObjectName="ArticleVideo"></table> -->
+<!-- 		<table schema="" tableName="article_pic" domainObjectName="ArticlePic"></table> -->
+<!-- 		<table schema="" tableName="cms_user" domainObjectName="CmsUser"></table> -->
+<!-- 		<table schema="" tableName="article_category" domainObjectName="ArticleCategory"></table> -->
+
+		<!-- <table schema="" tableName="user" domainObjectName="User" enableDeleteByPrimaryKey="false" 
+			enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"></table> -->
+	</context>
+</generatorConfiguration>
